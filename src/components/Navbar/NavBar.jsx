@@ -6,28 +6,29 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { CartWidget } from "../CartWidget.jsx/CartWidget"
+import { Link } from 'react-router-dom';
+
 
 
 export const NavBar = () => {
   return (
 
     
-    <Navbar fixed="top" expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-secondary">
       <Container>
         <Navbar.Brand href="#">ReadingBook</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="me-auto my-2 my-lg-0 "
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Top 10</Nav.Link>
-            <Nav.Link href="#action2">Ficción</Nav.Link>
-            <Nav.Link href="#action2">Educativos</Nav.Link>
-            <Nav.Link href="#action2">Novedades</Nav.Link>
-            <Nav.Link href="#action2">Contacto</Nav.Link>
+            <Link className="btn" to="/">Home</Link>
+            <Link className="btn" to="/category">Arte</Link>
+            <Link className="btn" to="/category">Ficción</Link>
+            <Link className="btn" to="/category">Educativos</Link>
+            
            
            
             <Form className="d-flex">
@@ -43,8 +44,10 @@ export const NavBar = () => {
           </Nav>
           <p>Carro de compras</p>
 
+          < Link className="btn" to="">
+            <CartWidget />
+          </Link>
           
-          <CartWidget />
           
 
         
