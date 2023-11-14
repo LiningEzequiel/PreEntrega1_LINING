@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { CartWidget } from "../CartWidget.jsx/CartWidget"
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 
@@ -24,10 +24,10 @@ export const NavBar = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Link className="btn" to="/">Home</Link>
-            <Link className="btn" to="/category">Arte</Link>
-            <Link className="btn" to="/category">Ficción</Link>
-            <Link className="btn" to="/category">Educativos</Link>
+            <NavLink className={ ( { isActive } ) => isActive ? "btn btn-dark" : "btn" } to="/">Home</NavLink>
+            <NavLink className={ ( { isActive } ) => isActive ? "btn btn-dark" : "btn" } to="/category/arte">Arte</NavLink>
+            <NavLink className={ ( { isActive } ) => isActive ? "btn btn-dark" : "btn" } to="/category/ficción">Ficción</NavLink>
+            <NavLink className={ ( { isActive } ) => isActive ? "btn btn-dark" : "btn" } to="/category/educativos">Educativos</NavLink>
             
            
            
