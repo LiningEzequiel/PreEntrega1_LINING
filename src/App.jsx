@@ -23,9 +23,9 @@ function App() {
       <div className="container">
         <NavBar />
         <Routes>
-          <Route path="/" element={<ItemListContainer />}/>
-          <Route path="/category" element={<ItemListContainer />}/>
-          <Route path="/detail:pid" element={<ItemDetailContainer />}/>  
+          <Route path="/" element={ <ItemListContainer />}/>
+          <Route path="/category" element={ <ItemListContainer />}/>
+          <Route path="/detail/:pid" element={ <ItemDetailContainer />}/>  
           <Route path="*" element={ <Navigate to="/" />} />
         </Routes>
         

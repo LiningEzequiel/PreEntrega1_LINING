@@ -5,7 +5,7 @@ const productos=[
       autor: "Alejandro Lapunzina",
       description: "Lorem impsum",
       category: "arte",
-      imgUrl: "./images/AcercaDeLaArquitectura-AlejandroLapunzina.jpg",
+      imgUrl: "/images/AcercaDeLaArquitectura-AlejandroLapunzina.jpg",
       price: 13800,
       stock: 20
     },
@@ -15,7 +15,7 @@ const productos=[
       autor: "Vico Castro",
       description: "Lorem impsum",
       category: "arte",
-      imgUrl: "./images/ArmoniaAplicada-VicoCastro.jpg",
+      imgUrl: "/images/ArmoniaAplicada-VicoCastro.jpg",
       price: 12500,
       stock: 35
     },
@@ -25,7 +25,7 @@ const productos=[
       autor: "Franz Kafka",
       description: "Lorem impsum",
       category: "arte",
-      imgUrl: "./images/Dibujos-FranzKafka.jpg",
+      imgUrl: "/images/Dibujos-FranzKafka.jpg",
       price: 9600,
       stock: 25
     },
@@ -35,7 +35,7 @@ const productos=[
       autor: "Jacques Aumont",
       description: "Lorem impsum",
       category: "arte",
-      imgUrl: "./images/LaImagen-JacquesAumont.jpg",
+      imgUrl: "/images/LaImagen-JacquesAumont.jpg",
       price: 16200,
       stock: 15
     },
@@ -45,7 +45,7 @@ const productos=[
       autor: "Saturnino Salas",
       description: "Lorem impsum",
       category: "educativos",
-      imgUrl: "./images/Calculus-SaturninoSalas.jpg",
+      imgUrl: "/images/Calculus-SaturninoSalas.jpg",
       price: 15800,
       stock: 18
     },
@@ -55,7 +55,7 @@ const productos=[
       autor: "Dan Hofstadter",
       description: "Lorem impsum",
       category: "educativos",
-      imgUrl: "./images/LaTierraSeMueve-DanHofstadter.jpg",
+      imgUrl: "/images/LaTierraSeMueve-DanHofstadter.jpg",
       price: 8900,
       stock: 39
     },
@@ -65,7 +65,7 @@ const productos=[
       autor: "Milton Heifetz",
       description: "Lorem impsum",
       category: "aeducativos",
-      imgUrl: "./images/UnPaseoPorLasEstrellas-MiltonHeifetz.jpg",
+      imgUrl: "/images/UnPaseoPorLasEstrellas-MiltonHeifetz.jpg",
       price: 7500,
       stock: 22
     },
@@ -75,7 +75,7 @@ const productos=[
       autor: "Juan Carlos Angulo",
       description: "Lorem impsum",
       category: "educativos",
-      imgUrl: "./images/VariableCompleja-JuanCarlosAngulo.jpg",
+      imgUrl: "/images/VariableCompleja-JuanCarlosAngulo.jpg",
       price: 10100,
       stock: 26
     },
@@ -85,7 +85,7 @@ const productos=[
       autor: "Stephen King",
       description: "Lorem impsum",
       category: "ficción",
-      imgUrl: "./images/Holly-SthephenKing.jpg",
+      imgUrl: "/images/Holly-SthephenKing.jpg",
       price: 7200,
       stock: 14
     },
@@ -95,7 +95,7 @@ const productos=[
       autor: "Ken Follet",
       description: "Lorem impsum",
       category: "ficción",
-      imgUrl: "./images/LaArmaduraDeLaLuz-KenFollet.jpg",
+      imgUrl: "/images/LaArmaduraDeLaLuz-KenFollet.jpg",
       price: 8400,
       stock: 17
     },
@@ -105,7 +105,7 @@ const productos=[
       autor: "Charlie Donlea",
       description: "Lorem impsum",
       category: "ficción",
-      imgUrl: "./images/LaCasaDeLosSuicidios-CharlieDonlea.jpg",
+      imgUrl: "/images/LaCasaDeLosSuicidios-CharlieDonlea.jpg",
       price: 9200,
       stock: 11
     },
@@ -115,7 +115,7 @@ const productos=[
       autor: "Edgar Burroughs",
       description: "Lorem impsum",
       category: "ficción",
-      imgUrl: "./images/Tarzan-EdgarBurroughs.jpg",
+      imgUrl: "/images/Tarzan-EdgarBurroughs.jpg",
       price: 6400,
       stock: 19
     }
@@ -123,8 +123,8 @@ const productos=[
   ]
   
   
-  export const mFetch = () => new Promise ((res, rej) => {
+  export const mFetch = (id) => new Promise ((res, rej) => {
     setTimeout(()=>{
-      res(productos)
+      res( id ? productos.find(producto => producto.id == id) : productos)
     }, 1000)
   })

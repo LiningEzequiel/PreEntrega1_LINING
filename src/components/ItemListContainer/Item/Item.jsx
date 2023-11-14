@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 
-const Item = ({producto}) => {
+export const Item = ({producto}) => {
 
 
   return (
@@ -23,4 +23,3 @@ const Item = ({producto}) => {
                            </div>)}
     
   
-export default Item

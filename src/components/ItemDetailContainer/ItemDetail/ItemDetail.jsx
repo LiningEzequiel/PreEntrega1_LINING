@@ -1,33 +1,42 @@
 import ItemCounter from "../../ItemCounter/ItemCounter"
 
 
-const ItemDetail = ({product}) => {
+export const ItemDetail = ({producto}) => {
   return (
     <div>
-    <div className="row">
-        <div className="col-12 text-center">
+
+
+     <div className="row">
+       <div className="col-12 text-center">
           <h1>Detalle del Producto</h1>
+       </div>
+      </div> 
+    <div className="row">
+        
+        <div className="col-6 text-center">
+            <img src={producto.imgUrl} alt={producto.title}  className="img-fluid"/>
+
         </div>
         <div className="col-6 text-center">
-            <img src={product.imageUrl} alt={product.title}  className="img-fluid"/>
-            <h2>{product.title}</h2>
+            
+            <h2>{producto.title}</h2>
+            <h3>{producto.autor}</h3>
+            <h3>Precio: {producto.price}</h3>
+            <ItemCounter />
+            <h3>Stock: {producto.stock}</h3>
+            <h3>Categoria: {producto.category}</h3>
 
         </div>
-        <div>
-            <h3>Precio: {product.price}</h3>
-        </div>
 
-        <ItemCounter />
-        <div>
-            <h3>Stock: {product.stock}</h3>
-            <h3>Categoria: {product.category}</h3>
-        </div>
+        
+   
+        
 
     </div>
 
     <div className="row">
         <div className="col-12">
-            <p>Descripción: {product.description}</p>
+            <p>Descripción: {producto.description}</p>
 
         </div>
     </div>
@@ -35,4 +44,3 @@ const ItemDetail = ({product}) => {
   )
 }
 
-export default ItemDetail

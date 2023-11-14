@@ -3,7 +3,9 @@ import { mFetch } from "../../helpers/mFetch"
 import { useState } from "react"
 
 import "./ItemListContainer.css"
-import ItemList from "./ItemList/ItemList"
+import { ItemList } from "./ItemList/ItemList"
+
+
 
 
 

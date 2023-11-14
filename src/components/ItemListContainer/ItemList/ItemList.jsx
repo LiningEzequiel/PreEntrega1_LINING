@@ -1,7 +1,8 @@
-import Item from "../Item/Item"
+import { Item } from "../Item/Item"
 
 
-const ItemList = ({productos}) => {
+
+export const ItemList = ({productos}) => {
   return (
     <>
         {productos.map(producto => <div key={producto.id} className="w-25 p-3" >
@@ -12,4 +13,3 @@ const ItemList = ({productos}) => {
   )
 }
 
-export default ItemList

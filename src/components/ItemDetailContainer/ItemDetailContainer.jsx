@@ -1,24 +1,26 @@
 import { useEffect, useState } from "react"
 import { mFetch } from "../../helpers/mFetch"
-import ItemDetail from "./ItemDetail/ItemDetail"
+
 import { useParams } from "react-router-dom"
+import { ItemDetail } from "./ItemDetail/ItemDetail"
 
 
 export const ItemDetailContainer = () => {
 
-    const [product, setProduct]= useState({})
+    const [producto, setProducto]= useState({})
 
     const {pid}= useParams()
 
     useEffect(()=>{
       mFetch(pid)
-      .then(data => setProduct(data))
+      .then(data => setProducto(data))
       .catch(error => console.log(error))
     }, [])
 
+    console.log(producto)
   return (
     <div>
-        <ItemDetail product={product}/>
+        <ItemDetail producto={producto}/>
     </div>
   )
 }
