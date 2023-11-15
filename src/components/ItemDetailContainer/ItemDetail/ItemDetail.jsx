@@ -2,6 +2,10 @@ import ItemCounter from "../../ItemCounter/ItemCounter"
 
 
 export const ItemDetail = ({producto}) => {
+
+  const onAdd=(cantidad)=>{
+    console.log("Ud ha comprado: " + cantidad)
+  }
   return (
     <div>
 
@@ -21,8 +25,8 @@ export const ItemDetail = ({producto}) => {
             
             <h2>{producto.title}</h2>
             <h3>{producto.autor}</h3>
-            <h3>Precio: {producto.price}</h3>
-            <ItemCounter />
+            <h3>Precio: AR$ {producto.price}</h3>
+            <ItemCounter initial={1} stock={producto.stock} onAdd={onAdd}/>
             <h3>Stock: {producto.stock}</h3>
             <h3>Categoria: {producto.category}</h3>
 
