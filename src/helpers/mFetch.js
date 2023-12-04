@@ -126,7 +126,7 @@ const productos=[
   export const mFetch = (id) => new Promise ((res, rej) => {
     setTimeout(()=>{
       res( id ? productos.find(producto => producto.id == id) : productos)
-    }, 1000)
+    }, 500)
   })
 
-  ""
+  

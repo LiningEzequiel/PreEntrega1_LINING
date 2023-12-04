@@ -27,11 +27,11 @@ const handleOnAdd=()=>{
 
   return (
     <div>
-        <button onClick={handleRestar}>-</button>
+        <button className="btn btn-outline-dark p-2 m-3" onClick={handleRestar}>-</button>
         <label>{counter}</label>
-        <button onClick={handleSumar}>+</button>
+        <button className="btn btn-outline-dark p-2 m-3" onClick={handleSumar}>+</button>
         
-        <button onClick={handleOnAdd}>Agregar</button>
+        <button className="btn btn-outline-dark btn-success p-2 m-3" onClick={handleOnAdd}>Agregar</button>
     </div>
   )
 }

@@ -44,7 +44,7 @@ export const NavBar = () => {
           </Nav>
           <p>Carro de compras</p>
 
-          < Link className="btn" to="">
+          < Link className="btn" to="/cart">
             <CartWidget />
           </Link>
           

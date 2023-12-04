@@ -1,0 +1,50 @@
+
+.contImagen {
+    /* width: 20%; */
+    background-color: brown;
+    
+    /* height: 60vh; */
+
+}
+
+.contTexto {
+    /* background-color: yellow; */
+    display: inline-block;
+    /* justify-content: center; */
+}
+
+.contCampo {
+padding: 10px;
+margin: 10px;
+}
+
+.contDetalle {
+    background-color: beige;
+    padding: 20px;
+    margin: 20px;
+    width: 80%;
+    display: inline-block;
+    justify-content: center;
+    border: solid 1px;
+    border-radius: 10px;
+
+}
+
+.contDescripcion {
+    background-color:beige;
+    width: 80%;
+    display: inline-block;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+    border: solid 1px;
+    border-radius: 10px;
+
+
+}
+
+.nombreAutor {
+color: orangered;
+font-weight: 600;
+
+}
