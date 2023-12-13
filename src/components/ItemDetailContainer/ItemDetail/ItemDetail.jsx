@@ -1,8 +1,9 @@
-import { useContext, useState } from "react"
+import { useState } from "react"
 import ItemCounter from "../../ItemCounter/ItemCounter"
-import { CartContext } from "../../../context/CartContext"
+
 import "./ItemDetail.css"
 import { Link } from "react-router-dom"
+import { useCartContext } from "../../../context/CartContext"
 
 
 export const ItemDetail = ({producto}) => {
@@ -10,8 +11,12 @@ export const ItemDetail = ({producto}) => {
   const [isCounter, setIsCounter]=useState(true)
 
 
-const { addProduct, cartList } = useContext(CartContext) // llamamos a la funcion para consumir el contexto
+// const { addProduct, cartList } = useContext(CartContext) 
+
+// llamamos a la funcion para consumir el contexto
   
+const { addProduct, cartList } = useCartContext()
+
 const onAdd=(cantidad)=>{
     console.log(`Ud ha comprado ${cantidad} unidades` )
     addProduct( {...producto, cantidad} )// aqui va la funcion que agrega productos al carrito

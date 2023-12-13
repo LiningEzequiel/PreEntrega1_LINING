@@ -24,3 +24,22 @@
     margin: 5px;
 
 }
+
+.encabezadoCart {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    gap: 70px;
+    
+    
+    /* justify-content: space-evenly; */
+    
+
+}
+
+.encabezadoCartItem {
+    position: relative;
+    left: 80px;
+}
+

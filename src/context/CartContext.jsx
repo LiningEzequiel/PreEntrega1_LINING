@@ -1,6 +1,8 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-export const CartContext = createContext([])
+ const CartContext = createContext([])
+
+export const useCartContext = () => useContext(CartContext)
 
 export const CartContextProvider = ({ children }) => {
     // aqui se define estados y funciones globales
@@ -27,15 +29,14 @@ const indexProduct=isCart(producto.id)
         setCartList([])
     }
 
-    // aqui va la funcion cantidad total de productos
+    //  funcion para calcular cantidad total de productos
     const totalPrice = ()=> cartList.reduce((totalPrecio, producto)=> totalPrecio += (producto.price * producto.cantidad) , 0 )
+   
+   // funcion para calcular precio total de productos
     const totalCantidad = ()=> cartList.reduce((totalProduct, producto)=> totalProduct += producto.cantidad , 0 )
 
-
-
     
-    // aqui va precio total de productos
-    // aqui va la funcion eliminar un producto por id
+    // funcion eliminar un producto por id
 
     const removeProduct= (pid) => {
         setCartList(cartList.filter(producto => producto.id!=pid))

@@ -19,7 +19,7 @@ export const ItemDetailContainer = () => {
       const dbFirestore=getFirestore() //permite conectar al servicio de firestore
       const queryDoc=doc(dbFirestore, "productos", pid)  // esta funcion permite acceder o apuntar a un documento de firestore(un objeto)
 
-      getDoc(queryDoc) // lo traemos con una funcion (en singular porque es un producto). getDoc es una promesa
+      getDoc(queryDoc) // lo traemos con una funcion (en singular porque es UN producto). getDoc es una promesa
       .then(resultado => setProducto( {id: resultado.id, ...resultado.data() } ))
       .catch(err => console.log(err))
       .finally(()=>setLoading(false))
