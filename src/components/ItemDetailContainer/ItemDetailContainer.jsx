@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
-import { mFetch } from "../../helpers/mFetch"
-
 import { useParams } from "react-router-dom"
+
 import { ItemDetail } from "./ItemDetail/ItemDetail"
 import { Loading } from "../Condicionales/Loading"
 import { doc, getDoc, getFirestore } from "firebase/firestore"
@@ -26,7 +25,7 @@ export const ItemDetailContainer = () => {
 
     }, [])
 
-    console.log(producto)
+   
   return (
     <div>
       {

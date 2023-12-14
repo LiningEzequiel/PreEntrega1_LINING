@@ -9,11 +9,13 @@
 }
 
 .imagen {
-    height: 150px;
+    height: 50px;
 }
 .contenedorImg {
    display: flex;
    flex-direction: row;
+   height: 120px;
+   
 }
 
 .contenedorFooter {

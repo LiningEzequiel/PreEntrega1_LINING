@@ -1,39 +1,40 @@
 import { useState } from "react"
-
+import { Link } from "react-router-dom"
 
 import { addDoc, collection, getFirestore } from "firebase/firestore"
-import { Link } from "react-router-dom"
-import "./CartContainer.css"
 import { useCartContext } from "../../context/CartContext"
+
+import "./CartContainer.css"
 
 export const CartContainer = () => {
 
+  const { cartList, vaciarCarrito, totalPrice, removeProduct } = useCartContext()
+
     const [formData, setFormData] = useState({
-      name:"",
-      phone:"",
-      email:"",
-      repetirEmail:""
+      name: "",
+      phone: "",
+      email: "",
+      repetirEmail: ""
     })
 
     
     const [isId, setIsId]=useState("")
 
-    const { cartList, vaciarCarrito, totalPrice, removeProduct } = useCartContext()
+    
     
     const handleOrder = async (evt) => {
       evt.preventDefault()
       const order = {}
       order.buyer = formData
-      order.items = cartList.map(({id, name, price})=> ({id, name, price}))
+      order.items = cartList.map(({id, title, price}) => ({id, title, price}))
       order.total = totalPrice()
 
       const db = getFirestore()
       const orderCollection = collection(db, "orders")
-      
+
       addDoc(orderCollection, order)
       .then(resp => setIsId(resp.id))
       .catch(err => console.log(err))
-
       
     }
 
@@ -46,6 +47,7 @@ export const CartContainer = () => {
     }
 
 
+
   return (
  
         <div>
@@ -53,7 +55,7 @@ export const CartContainer = () => {
                      
                      <div>
                      
-                           {totalPrice() ==0 ? 
+                           {totalPrice() ==0  ? 
                            
                            <>
                            <p className="p-2 align-self-center"> Tu carrito de productos está vacío </p>
@@ -119,6 +121,7 @@ export const CartContainer = () => {
                                 </div>
           
                       <div className="w-25 m-2 align-self-center">
+
                         <form className="form-control" onSubmit={handleOrder}>
                          <label>Ingrese su Nombre</label>
                          <input className="form-control" type="text" value={formData.name} name="name" onChange={handleOnChange}></input>
@@ -136,7 +139,7 @@ export const CartContainer = () => {
                         
                       </div>
 
-                       {isId!="" && <label>Su orden de compra es: {isId} </label>}
+                       {isId!="" && <h2>Gracias! Su orden de compra es: {isId} </h2>}
 
                            </>
                             }

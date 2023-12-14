@@ -1,14 +1,19 @@
 
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { CartWidget } from "../CartWidget.jsx/CartWidget"
 import { Link, NavLink } from 'react-router-dom';
 
+import Container from 'react-bootstrap/Container';
 
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
+import { CartWidget } from "../CartWidget.jsx/CartWidget"
+
+
+const category = [
+  {id: 1, name: "Arte", path:"arte", description:"libros de arte"},
+  {id: 2, name: "Ficción", path:"ficción", description:"libros de ficción"},
+  {id: 3, name: "Educativos", path:"educativos", description:"libros educativos"},
+]
 
 export const NavBar = () => {
   return (
@@ -25,21 +30,11 @@ export const NavBar = () => {
             navbarScroll
           >
             <NavLink className={ ( { isActive } ) => isActive ? "btn btn-dark" : "btn" } to="/">Home</NavLink>
-            <NavLink className={ ( { isActive } ) => isActive ? "btn btn-dark" : "btn" } to="/category/arte">Arte</NavLink>
-            <NavLink className={ ( { isActive } ) => isActive ? "btn btn-dark" : "btn" } to="/category/ficción">Ficción</NavLink>
-            <NavLink className={ ( { isActive } ) => isActive ? "btn btn-dark" : "btn" } to="/category/educativos">Educativos</NavLink>
-            
+            {category.map(category => <NavLink key={category.id} className={ ( { isActive } ) => isActive ? "btn btn-dark" : "btn" } to={`/category/${category.path}`}>{category.name}</NavLink> )}
+
+
            
            
-            <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Buscar"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Buscar</Button>
-          </Form>
           
           </Nav>
           <p>Carro de compras</p>
